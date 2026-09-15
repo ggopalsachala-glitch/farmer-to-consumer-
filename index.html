@@ -8,533 +8,445 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4fff4;
-    color:#222;
+  background:#f4fff4;
+  color:#222;
 }
 
-/* Header */
 header{
-    background:#198754;
-    color:white;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:10;
+  background:#198754;
+  color:white;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
+  font-size:25px;
+  font-weight:bold;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:bold;
 }
 
-/* Hero */
+.cart-btn{
+  background:white;
+  color:#198754;
+  border:0;
+  padding:10px 15px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
 .hero{
-    min-height:400px;
-    padding:80px 8%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:linear-gradient(120deg,#d9ffd9,#ffffff);
-}
-
-.hero-text{
-    max-width:550px;
+  padding:60px 6%;
+  text-align:center;
+  background:linear-gradient(135deg,#e9ffe9,#c9f7d1);
 }
 
 .hero h1{
-    font-size:45px;
-    color:#146c43;
-    margin-bottom:20px;
+  color:#146c43;
+  font-size:42px;
+  margin-bottom:15px;
 }
 
 .hero p{
-    font-size:18px;
-    margin-bottom:25px;
-    line-height:1.6;
+  font-size:18px;
+  margin-bottom:25px;
 }
 
-.btn{
-    background:#198754;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+.shop-btn{
+  display:inline-block;
+  background:#198754;
+  color:white;
+  text-decoration:none;
+  padding:13px 25px;
+  border-radius:8px;
+  font-weight:bold;
 }
 
-.btn:hover{
-    background:#146c43;
-}
-
-/* Sections */
 section{
-    padding:55px 8%;
+  padding:45px 6%;
 }
 
 .section-title{
-    text-align:center;
-    color:#146c43;
-    margin-bottom:35px;
-    font-size:32px;
+  text-align:center;
+  color:#146c43;
+  margin-bottom:30px;
+  font-size:30px;
 }
 
-/* Products */
 .products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:22px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  background:white;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.10);
 }
 
-.veg{
-    font-size:70px;
-    margin-bottom:10px;
+.product-icon{
+  font-size:65px;
+  margin-bottom:12px;
 }
 
 .card h3{
-    color:#198754;
-    margin:10px;
+  color:#146c43;
+  margin-bottom:8px;
 }
 
 .price{
-    font-size:20px;
-    font-weight:bold;
-    margin:12px;
+  color:#198754;
+  font-size:20px;
+  font-weight:bold;
+  margin:12px 0;
 }
 
-/* Farmer */
-.farmer{
-    background:#e8f8e8;
-    text-align:center;
+.add-btn{
+  background:#198754;
+  color:white;
+  border:0;
+  padding:10px 18px;
+  border-radius:7px;
+  cursor:pointer;
 }
 
-.farmer-box{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+.about{
+  background:white;
+  text-align:center;
 }
 
-.farmer-icon{
-    font-size:70px;
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 
-/* Cart */
-.cart{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+.feature{
+  padding:25px;
+  background:#effff1;
+  border-radius:12px;
 }
 
-#cartItems{
-    margin:15px 0;
+.feature div{
+  font-size:40px;
+  margin-bottom:10px;
 }
 
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    padding:10px;
-    border-bottom:1px solid #ddd;
+.order-box{
+  max-width:600px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
 }
 
-.total{
-    text-align:right;
-    font-size:22px;
-    font-weight:bold;
-    margin:20px 0;
-    color:#146c43;
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0 15px;
+  border:1px solid #ccc;
+  border-radius:7px;
 }
 
-/* Order */
-.order-form{
-    max-width:600px;
-    margin:auto;
+.submit-btn{
+  width:100%;
+  background:#198754;
+  color:white;
+  border:0;
+  padding:13px;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
 }
 
-input, textarea, select{
-    width:100%;
-    padding:13px;
-    margin:8px 0 15px;
-    border:1px solid #bbb;
-    border-radius:7px;
-}
-
-textarea{
-    height:100px;
-}
-
-/* Footer */
 footer{
-    background:#146c43;
-    color:white;
-    text-align:center;
-    padding:25px;
+  background:#146c43;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:30px;
 }
 
-/* Mobile */
-@media(max-width:700px){
-    header{
-        flex-direction:column;
-        gap:10px;
-    }
+#message{
+  text-align:center;
+  margin-top:15px;
+  color:#198754;
+  font-weight:bold;
+}
 
-    nav a{
-        margin:5px;
-    }
+@media(max-width:600px){
+  .hero h1{
+    font-size:32px;
+  }
 
-    .hero{
-        text-align:center;
-        padding:50px 5%;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
+  nav{
+    width:100%;
+    text-align:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
-    <div class="logo">🌱 FarmFresh</div>
+  <div class="logo">🌱 FarmFresh</div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#vegetables">Vegetables</a>
-        <a href="#farmer">Farmer</a>
-        <a href="#cart">Cart 🛒</a>
-        <a href="#order">Order</a>
-    </nav>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Vegetables</a>
+    <a href="#about">About</a>
+    <a href="#order">Order</a>
+  </nav>
+
+  <button class="cart-btn" onclick="showCart()">
+    🛒 Cart (<span id="cartCount">0</span>)
+  </button>
 </header>
 
-
-<!-- Home -->
 <section class="hero" id="home">
-
-    <div class="hero-text">
-        <h1>Fresh Vegetables Direct From Farmers</h1>
-
-        <p>
-            Buy fresh and healthy green vegetables directly
-            from local farmers. No middleman, fair price
-            and fresh vegetables at your doorstep.
-        </p>
-
-        <a href="#vegetables">
-            <button class="btn">Shop Vegetables</button>
-        </a>
-    </div>
-
-    <div style="font-size:150px;">
-        🥦🥕🍅
-    </div>
-
+  <h1>Farmer to Consumer</h1>
+  <p>
+    Fresh Green Vegetables Directly From Local Farmers
+  </p>
+  <a class="shop-btn" href="#products">Shop Vegetables</a>
 </section>
 
+<section id="products">
+  <h2 class="section-title">🥬 Fresh Vegetables</h2>
 
-<!-- Vegetables -->
-<section id="vegetables">
-
-<h2 class="section-title">Fresh Green Vegetables</h2>
-
-<div class="products">
+  <div class="products">
 
     <div class="card">
-        <div class="veg">🥦</div>
-        <h3>Broccoli</h3>
-        <p>Fresh Farm Broccoli</p>
-        <div class="price">₹60 / kg</div>
-        <button class="btn" onclick="addToCart('Broccoli',60)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🥔</div>
+      <h3>Potato</h3>
+      <p>Fresh farm potatoes</p>
+      <div class="price">₹30 / kg</div>
+      <button class="add-btn" onclick="addToCart('Potato',30)">
+        Add to Cart
+      </button>
     </div>
 
     <div class="card">
-        <div class="veg">🥬</div>
-        <h3>Spinach</h3>
-        <p>Fresh Green Spinach</p>
-        <div class="price">₹30 / kg</div>
-        <button class="btn" onclick="addToCart('Spinach',30)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🍅</div>
+      <h3>Tomato</h3>
+      <p>Fresh red tomatoes</p>
+      <div class="price">₹40 / kg</div>
+      <button class="add-btn" onclick="addToCart('Tomato',40)">
+        Add to Cart
+      </button>
     </div>
 
     <div class="card">
-        <div class="veg">🥕</div>
-        <h3>Carrot</h3>
-        <p>Organic Farm Carrot</p>
-        <div class="price">₹50 / kg</div>
-        <button class="btn" onclick="addToCart('Carrot',50)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🥕</div>
+      <h3>Carrot</h3>
+      <p>Fresh organic carrots</p>
+      <div class="price">₹50 / kg</div>
+      <button class="add-btn" onclick="addToCart('Carrot',50)">
+        Add to Cart
+      </button>
     </div>
 
     <div class="card">
-        <div class="veg">🍅</div>
-        <h3>Tomato</h3>
-        <p>Fresh Red Tomato</p>
-        <div class="price">₹40 / kg</div>
-        <button class="btn" onclick="addToCart('Tomato',40)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🥦</div>
+      <h3>Broccoli</h3>
+      <p>Fresh green broccoli</p>
+      <div class="price">₹80 / kg</div>
+      <button class="add-btn" onclick="addToCart('Broccoli',80)">
+        Add to Cart
+      </button>
     </div>
 
     <div class="card">
-        <div class="veg">🥒</div>
-        <h3>Cucumber</h3>
-        <p>Fresh Farm Cucumber</p>
-        <div class="price">₹35 / kg</div>
-        <button class="btn" onclick="addToCart('Cucumber',35)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🥒</div>
+      <h3>Cucumber</h3>
+      <p>Fresh farm cucumber</p>
+      <div class="price">₹35 / kg</div>
+      <button class="add-btn" onclick="addToCart('Cucumber',35)">
+        Add to Cart
+      </button>
     </div>
 
     <div class="card">
-        <div class="veg">🫑</div>
-        <h3>Capsicum</h3>
-        <p>Fresh Green Capsicum</p>
-        <div class="price">₹70 / kg</div>
-        <button class="btn" onclick="addToCart('Capsicum',70)">
-            Add to Cart
-        </button>
+      <div class="product-icon">🌶️</div>
+      <h3>Green Chilli</h3>
+      <p>Fresh green chilli</p>
+      <div class="price">₹60 / kg</div>
+      <button class="add-btn" onclick="addToCart('Green Chilli',60)">
+        Add to Cart
+      </button>
     </div>
 
-</div>
-
+  </div>
 </section>
 
+<section class="about" id="about">
+  <h2 class="section-title">Why FarmFresh?</h2>
 
-<!-- Farmer -->
-<section class="farmer" id="farmer">
+  <div class="features">
 
-<h2 class="section-title">👨‍🌾 Our Farmers</h2>
-
-<div class="farmer-box">
-
-    <div class="farmer-icon">👨‍🌾</div>
-
-    <h2>Direct Farmer Connection</h2>
-
-    <p style="margin:15px 0;line-height:1.6;">
-        Our platform connects farmers directly with consumers.
-        Farmers get a fair price for their vegetables and
-        consumers get fresh vegetables at reasonable prices.
-    </p>
-
-    <p><b>Benefits:</b></p>
-
-    <p>✓ No Middleman</p>
-    <p>✓ Fair Price for Farmers</p>
-    <p>✓ Fresh Vegetables</p>
-    <p>✓ Doorstep Delivery</p>
-
-</div>
-
-</section>
-
-
-<!-- Cart -->
-<section id="cart">
-
-<h2 class="section-title">🛒 Your Cart</h2>
-
-<div class="cart">
-
-    <div id="cartItems">
-        Your cart is empty.
+    <div class="feature">
+      <div>👨‍🌾</div>
+      <h3>Direct From Farmers</h3>
+      <p>Buy vegetables directly from local farmers.</p>
     </div>
 
-    <div class="total">
-        Total: ₹<span id="total">0</span>
+    <div class="feature">
+      <div>🥬</div>
+      <h3>Fresh Products</h3>
+      <p>Fresh vegetables collected from farms.</p>
     </div>
 
-    <a href="#order">
-        <button class="btn">Proceed to Order</button>
-    </a>
+    <div class="feature">
+      <div>💰</div>
+      <h3>Fair Prices</h3>
+      <p>Better prices for farmers and consumers.</p>
+    </div>
 
-</div>
+    <div class="feature">
+      <div>🚚</div>
+      <h3>Easy Delivery</h3>
+      <p>Simple ordering and delivery process.</p>
+    </div>
 
+  </div>
 </section>
 
-
-<!-- Order -->
 <section id="order">
+  <h2 class="section-title">🛍️ Place Your Order</h2>
 
-<h2 class="section-title">📦 Place Your Order</h2>
+  <div class="order-box">
 
-<div class="order-form">
-
-    <label>Customer Name</label>
+    <label>Your Name</label>
     <input type="text" id="name" placeholder="Enter your name">
 
     <label>Mobile Number</label>
-    <input type="tel" id="mobile" placeholder="Enter mobile number">
+    <input type="tel" id="phone" placeholder="Enter mobile number">
 
-    <label>Delivery Address</label>
-    <textarea id="address"
-        placeholder="Enter your complete address"></textarea>
-
-    <label>Payment Method</label>
-
-    <select id="payment">
-        <option>Cash on Delivery</option>
-        <option>UPI</option>
-        <option>Online Payment</option>
+    <label>Select Vegetable</label>
+    <select id="vegetable">
+      <option>Potato</option>
+      <option>Tomato</option>
+      <option>Carrot</option>
+      <option>Broccoli</option>
+      <option>Cucumber</option>
+      <option>Green Chilli</option>
     </select>
 
-    <button class="btn" onclick="placeOrder()">
-        Place Order
+    <label>Quantity</label>
+    <input type="number" id="quantity" min="1" value="1">
+
+    <label>Delivery Address</label>
+    <textarea id="address" rows="4"
+      placeholder="Enter delivery address"></textarea>
+
+    <button class="submit-btn" onclick="placeOrder()">
+      Place Order
     </button>
 
-</div>
+    <div id="message"></div>
 
+  </div>
 </section>
 
-
-<!-- Footer -->
 <footer>
-
-    <h3>🌱 FarmFresh</h3>
-
-    <p>Farmer to Consumer Green Vegetable Transaction</p>
-
-    <p>© 2026 FarmFresh. All Rights Reserved.</p>
-
+  <p>🌱 FarmFresh - Farmer to Consumer</p>
+  <p>Fresh Vegetables • Fair Prices • Happy Farmers</p>
+  <p>© 2026 FarmFresh</p>
 </footer>
-
 
 <script>
 
 let cart = [];
-let total = 0;
 
 function addToCart(name, price){
 
-    cart.push({
-        name:name,
-        price:price
-    });
+  cart.push({
+    name:name,
+    price:price
+  });
 
-    total += price;
+  document.getElementById("cartCount").innerText = cart.length;
 
-    displayCart();
-
-    alert(name + " added to cart!");
+  alert(name + " added to cart! 🛒");
 }
 
+function showCart(){
 
-function displayCart(){
+  if(cart.length === 0){
+    alert("Your cart is empty.");
+    return;
+  }
 
-    let cartItems = document.getElementById("cartItems");
+  let total = 0;
+  let list = "Your Cart:\\n\\n";
 
-    if(cart.length === 0){
+  cart.forEach(function(item,index){
 
-        cartItems.innerHTML = "Your cart is empty.";
-        document.getElementById("total").innerText = "0";
+    list += (index + 1) + ". "
+          + item.name
+          + " - ₹"
+          + item.price
+          + "\\n";
 
-        return;
-    }
+    total += item.price;
+  });
 
-    cartItems.innerHTML = "";
+  list += "\\nTotal: ₹" + total;
 
-    cart.forEach(function(item,index){
-
-        cartItems.innerHTML += `
-            <div class="cart-item">
-                <span>${item.name}</span>
-
-                <span>
-                    ₹${item.price}
-                    <button
-                    onclick="removeItem(${index})">
-                    ❌
-                    </button>
-                </span>
-            </div>
-        `;
-
-    });
-
-    document.getElementById("total").innerText = total;
+  alert(list);
 }
-
-
-function removeItem(index){
-
-    total -= cart[index].price;
-
-    cart.splice(index,1);
-
-    displayCart();
-}
-
 
 function placeOrder(){
 
-    let name = document.getElementById("name").value;
-    let mobile = document.getElementById("mobile").value;
-    let address = document.getElementById("address").value;
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let vegetable = document.getElementById("vegetable").value;
+  let quantity = document.getElementById("quantity").value;
+  let address = document.getElementById("address").value;
 
-    if(name === "" || mobile === "" || address === ""){
+  if(name === "" || phone === "" || address === ""){
 
-        alert("Please fill all details.");
+    document.getElementById("message").innerText =
+      "Please fill all required details.";
 
-        return;
-    }
+    return;
+  }
 
-    if(cart.length === 0){
+  document.getElementById("message").innerText =
+    "✅ Order placed successfully! Thank you, " + name + ".";
 
-        alert("Please add vegetables to your cart.");
-
-        return;
-    }
-
-    alert(
-        "Order placed successfully! 🌱\n\n" +
-        "Customer: " + name +
-        "\nTotal Amount: ₹" + total
-    );
-
-    cart = [];
-    total = 0;
-
-    displayCart();
-
+  console.log({
+    name:name,
+    phone:phone,
+    vegetable:vegetable,
+    quantity:quantity,
+    address:address
+  });
 }
 
 </script>
 
 </body>
-      </html>
+</html>
